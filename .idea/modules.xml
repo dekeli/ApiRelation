@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../ApiCallAelation/.idea/ApiCallAelation.iml" filepath="$PROJECT_DIR$/../ApiCallAelation/.idea/ApiCallAelation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ApiRelation.iml" filepath="$PROJECT_DIR$/.idea/ApiRelation.iml" />
+    </modules>
+  </component>
+</project>
