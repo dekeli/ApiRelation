@@ -13,4 +13,7 @@ def add(request):
     return HttpResponse(str(c))
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'learn/home.html')
+
+def base(request):
+    return render(request, 'base.html')

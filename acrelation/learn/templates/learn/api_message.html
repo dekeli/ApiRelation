@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}
+    接口库
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="form-group col-md-12 alert bg-primary" xmlns="http://www.w3.org/1999/html">
+        <div class="form-group">
+            <label class="control-label" style="float: left;">所属服务：</label>
+            <div class="col-md-2">
+                <select class="form-control" id="host" onchange="search_interface()">
+                    <option value="0">请选择</option>
+                    {% for host in host_list %}
+                    <option value="{{ host.host }}"  >{{ host.host}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <label class="control-label" style="float: left;">请求方法：</label>
+            <div class="col-md-2">
+                <select class="form-control" id="method" onchange="search_interface()">
+                    <option value="0" selected>请选择</option>
+                    {% for method in method_list %}
+                    <option value="{{ method.method }}" >{{ method.method}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <label class="control-label" style="float: left;">路由：</label>
+            <div class="col-md-2">
+                <select class="form-control" id="host" onchange="search_interface()">
+                    <option value="0">请选择</option>
+                    {% for host in host_list %}
+                    <option value="{{ host.host }}"  >{{ host.host}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+            <div class="col-md-12 column span12"></div>
+            <!-- 流程管理 -->
+            <div class="col-md-2 column">
+                <p style="height:30px;line-height: 30px;margin-left:13px;margin-bottom:5px;font-size: 17px;color: #000000;display:inline;padding-bottom:6px;">接口列表：</p>
+            </div>
+            <div class="col-md-12 column table-responsive" id="interfaceTableDiv">
+			    <table class="table table-bordered table-striped" id="interfaceTable">
+				    <thead>
+					    <tr>
+	    					<th style="width:5%">编号</th>
+		    				<th style="width:10%">请求方法</th>
+                            <th style="width:15%">host</th>
+                            <th style="width:5%">port</th>
+			    			<th style="width:15%">path</th>
+                            <th style="width:10%">query</th>
+			    			<th style="width:15%">body</th>
+                            <th style="width:10%">content_type</th>
+                            <th style="width:15%">create_time</th>
+			    		</tr>
+				    </thead>
+				    <tbody id="table_body">
+                     {% for interface in interface_list %}
+                            <tr>
+                                <td id="{{ interface.id }}" style="width: 5%">{{ forloop.counter}}</td>
+                                <td style="width: 10%">{{ interface.method }}</td>
+                                <td style="width: 15%">{{ interface.host }}</td>
+                                <td style="width: 5%">{{ interface.port }}</td>
+                                <td style="width: 15%">{{ interface.path }}</td>
+                                <td style="width: 10%">{{ interface.query }}</td>
+                                <td style="width: 15%">{{ interface.body}}</td>
+                                <td style="width: 10%">{{ interface.content_type}}</td>
+                                <td style="width: 15%">{{ interface.create_time}}</td>
+                            </tr>
+                     {% endfor %}
+				    </tbody>
+			    </table>
+		    </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="../../static/nowjs/interface_repository.js"></script>
+    <script type="text/javascript">
+        var param_str = window.location.search;
+        //选中下拉菜单
+        if(param_str !=''){
+            //初始化请求方法、host
+            for(var i=1;i<$("#method option").length;i++){
+                $("#method option").eq(i).css("display", "block");
+                $("#method option")[0].selected = true;
+            }
+            for(var i=1;i<$("#host option").length;i++){
+                $("#host option").eq(i).css("display", "block");
+                $("#host option")[0].selected = true;
+            }
+            if(method != "0"){
+                var obj = $("#host option")
+                for(var j=0;j<obj.length;j++){
+                    obj.eq(j).css("display", "block")
+                }
+            }
+        }else{
+            //初始化下拉菜单的值
+            $("#method").val("0");
+            $("#host").val("0");
+        }
+    </script>
+{% endblock %}
