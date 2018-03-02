@@ -5,7 +5,7 @@ from ..models import ApiMessage
 from django.core.paginator import Paginator
 
 # Create your views here.
-def base(request):
+def api_message(request):
     apidata = {}
     apis = ApiMessage.objects.all()
     current_page = request.GET.get("page", 1)
@@ -13,4 +13,4 @@ def base(request):
     apis = pages.page(current_page)
     apidata["apis"] = apis
     apidata["pages"] = pages
-    return render(request, 'base.html', apidata)
+    return render(request, 'api_message.html', apidata)

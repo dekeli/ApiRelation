@@ -21,8 +21,8 @@ from learn.views import add_api_views as learn_add_api_views
 from learn.views import update_api_views as learn_update_api_views
 
 urlpatterns = [
-    url(r'^$', learn_views.base, name='base'),
-    path('show_api_list/', learn_views.base, name='show_api_list'),
+    url(r'^$', learn_views.api_message, name='base'),
+    path('show_api_list/', learn_views.api_message, name='show_api_list'),
     path('get_api_by_id/<int:api_id>', learn_update_api_views.api_id_get, name='get_api_by_id'),
     path('add_api/', learn_add_api_views.add_api_to_library, name='add_api'),
     path('admin/', admin.site.urls),

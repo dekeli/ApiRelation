@@ -44,10 +44,10 @@ function add_api_message() {
 //初始化基本信息窗口
 function init_api_basic(x){
     var tr = $(x).parent("td").parent("tr");
-    $("#edit_api_component_input").val($(tr).children().eq(1).text());
-    $("#edit_api_request_select").val($(tr).children().eq(2).text());
-    $("#edit_api_url_input").val($(tr).children().eq(3).text());
-    $("#edit_api_name_input").val($(tr).children().eq(4).text());
+    $("#edit_api_component_input").val($(tr).children().eq(1).attr("title"));
+    $("#edit_api_request_select").val($(tr).children().eq(2).attr("title"));
+    $("#edit_api_url_input").val($(tr).children().eq(3).attr("title"));
+    $("#edit_api_name_input").val($(tr).children().eq(4).attr("title"));
     var status = $(tr).children().eq(5).text();
     var status2 = "";
     if(status == "在用"){status2 = "1";}
@@ -59,6 +59,8 @@ function init_api_basic(x){
 function update_api_message(x) {
     init_api_basic(x);
     var put_data = {};
+    var tr = $(x).parent("td").parent("tr");
+
     put_data["edit_api_component"] = $("#edit_api_component_input").val();
     put_data["edit_api_request"] = $("#edit_api_request_select").val();
     put_data["edit_api_url"] = $("#edit_api_url_input").val();
