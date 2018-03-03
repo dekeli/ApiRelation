@@ -1,4 +1,4 @@
-//接口表单公共校验方法
+
 //新增接口基本信息
 function add_api_message() {
     var post_data = {};
@@ -60,10 +60,58 @@ function update_api_message(x) {
     init_api_basic(x);
     var put_data = {};
     var tr = $(x).parent("td").parent("tr");
-
+    put_data["api_id"] = $(tr).children().eq(0).text();
+    var myReg = /^[a-zA-Z0-9_~'!@#$%^&*()\-+=:;"/\\,.<>\{\}\[\]\s]{0,100}$/;
     put_data["edit_api_component"] = $("#edit_api_component_input").val();
     put_data["edit_api_request"] = $("#edit_api_request_select").val();
     put_data["edit_api_url"] = $("#edit_api_url_input").val();
     put_data["edit_api_name"] = $("#edit_api_name_input").val();
     put_data["edit_api_status"] = $("#edit_api_status_select").val();
-};
+    $("#edit_api_component_input").change(function(){
+       put_data["edit_api_component"] = $("#edit_api_component_input").val();
+    });
+    $("#edit_api_request_select").change(function(){
+       put_data["edit_api_request"] = $("#edit_api_request_select").val();
+    });
+    $("#edit_api_url_input").change(function(){
+       put_data["edit_api_url"] = $("#edit_api_url_input").val();
+    });
+    $("#edit_api_name_input").change(function(){
+       put_data["edit_api_name"] = $("#edit_api_name_input").val();
+    });
+    $("#edit_api_status_select").change(function(){
+       put_data["edit_api_status"] = $("#edit_api_status_select").val();
+    });
+    $("#update_api_message_button").click(function(){
+        if (put_data["component_owner"] == "" || put_data["url_name"] == ""){
+             alert("请将必填信息填写完整");
+             return;
+        }
+        else if(!myReg.test(put_data["component_owner"]) || !myReg.test(put_data["url_name"])){
+            alert("接口服务或URL不可为中文");
+            return;
+        }
+        $.ajax(
+        {
+            url: "/update_api/",
+            type: "POST",
+            dataType: "json",
+            data: put_data,
+            success:function(data) {
+               if(data.result == "fail"){
+                    alert("修改失败");
+               }
+               if(data.result == "success"){
+                    alert("修改成功");
+                    window.location.reload();
+               }
+               console.log(data)
+            },
+            error: function (data) {
+                if(data.responseJSON.message !== null && data.responseJSON.message !== undefined && data.responseJSON.message !== '')
+                {alert(data.responseJSON.message);}
+                else {alert('修改失败');}
+            }
+        })
+    });
+}
