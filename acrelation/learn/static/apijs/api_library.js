@@ -54,7 +54,7 @@ function init_api_basic(x){
     else{status2="0"}
     $("#edit_api_status_select").val(status2);
 }
-
+//
 //修改接口基本信息
 function update_api_message(x) {
     init_api_basic(x);
