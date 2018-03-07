@@ -1,0 +1,14 @@
+    def %(api_fun_name)s(self, %(api_fun_param)s token_type=2):
+        """
+        %(api_match_desc)s %(api_path)s
+        %(api_desc)s
+        %(api_request_data)s
+        %(api_response_data)s
+        """
+        method = '%(api_match_desc)s'
+        url = %(api_url_param)s
+        %(api_if_query)s
+        self.set_auth(token_type=token_type, url=url, method=method)
+
+        response = self.%(api_match)s(url%(api_response_param)s)
+        return response

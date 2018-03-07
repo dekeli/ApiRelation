@@ -1,0 +1,10 @@
+class %(request_class_name)s(BaseData):
+    """
+    %(class_desc)s
+    """
+
+    def __init__(self%(request_struct_parameter)s):
+        """
+        %(struct_desc)s"""
+        BaseData.__init__(self)
+        self.params = unity.copy_dict(locals())

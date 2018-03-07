@@ -1,0 +1,30 @@
+# coding=utf-8
+"""
+%(method)s %(path)s
+%(summary)s
+"""
+from nd.rest.co_test.api_nd_case import ApiNdCase
+from nd.rest.restful import Restful
+from data_struct.unity import *
+%(index_model)s
+
+
+class %(class)s(ApiNdCase):
+    def setUp(self):
+        self.rest_o = Restful()
+        self.statistic_o = %(api_call_class_name)s(global_env)
+
+    def tearDown(self):
+        pass
+
+    def test_get_response(self):
+        """
+        %(summary)s
+		level:
+		"""
+        res = self.statistic_o.%(request_fun)s()
+        res_dict = self.rest_o.parse_response(res, OK, '%(summary)s')
+        # 数据结构验证
+        %(data_struct_test)s
+        # 数据验证
+        assert_that(1, equal_to(1))

@@ -115,3 +115,30 @@ function update_api_message(x) {
         })
     });
 }
+
+//接口库条件查询
+function search_api(){
+    var post_data = {};
+    post_data["component_owner"] = $("#search-api-component").val();
+    post_data["request_name"] = $("#search-api-request").val();
+    post_data["url_name"] = $("#search-api-url").val();
+    $.ajax(
+        {
+            url: "/search_api/",
+            type: "POST",
+            dataType: "json",
+            data: post_data,
+            success:function(data) {
+               if(data.result == "success"){
+                    window.location.reload();
+               }
+               console.log(data)
+            },
+            error: function (data) {
+                if(data.responseJSON.message !== null && data.responseJSON.message !== undefined && data.responseJSON.message !== '')
+                {alert(data.responseJSON.message);}
+                else {alert('查询失败');}
+            }
+        }
+    )
+}

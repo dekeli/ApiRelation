@@ -1,0 +1,121 @@
+# coding=utf-8
+
+from nd.rest.co_token.uc import *
+from nd.rest.conf.conf import MyCfg
+from nd.rest.http import Http
+
+__author__ = 'Administrator'
+
+
+class ApiHttp(object):
+    def __init__(self, env=None, language=None):
+        """
+        :param env: 指定配置文件中的环境名称
+        """
+        self.env = env
+        self.language = language
+
+        # 1.读配置文件，获取host等配置
+        my_cfg = MyCfg('service_cfg.ini')
+        my_cfg.set_path(__file__)
+        my_cfg.set_section(self.env)
+
+        self.host = my_cfg.get("host")
+        self.port = my_cfg.get("port")
+        self.user = my_cfg.get("user")
+        self.password = my_cfg.get("password")
+
+        # 获取配置文件中的head设置
+        self.header_Authorization = my_cfg.get('Authorization')
+        self.header_x_gaea_authorization = my_cfg.get('X-Gaea-Authorization')
+
+        # 2.设置默认的header
+        self.header = dict()
+        self.header['Content-Type'] = 'application/json'
+
+        self.http_o = Http(self.host, self.port)
+        self.http_o.set_header(self.header)
+
+        self.version = 1
+
+        if self.env == 'ol':
+            uc_env = UcEnv.ol
+        else:
+            uc_env = UcEnv.pre
+        self.uc_token_o = UcToken(uc_env)
+
+        self.access_token = ''
+
+    def get_url(self, url, version=None):
+        if version is not None:
+            return "/" + str(version) + "/" + url
+        else:
+            return "/v" + str(self.version) + "/" + url
+
+    def set_auth(self, token_type=2, user_name='', password='', org='', url='', method='', host=None):
+        """
+        设置身份信息
+        无指定的身份信息时，直接使用默认的身份
+        token_type:
+            0: header中，不使用Authorization
+            其他：header中带正确的Authorization
+        user_name、password： 切换登录者时传入；若不传，则使用配置的账号
+        """
+        if user_name is None or user_name == '':
+            user_name = self.user
+
+        if password is None or password == '':
+            password = self.password
+
+        if token_type == 0:
+            self.remove_cookie()
+        elif token_type == 2:
+            if self.port:
+                access_token = self.uc_token_o.get_token(user_name, password, org, self.get_url(url), method,
+                                                         self.host + ':' + self.port)
+            else:
+                access_token = self.uc_token_o.get_token(user_name, password, org, self.get_url(url), method, self.host)
+            self.header['Authorization'] = access_token
+            self.http_o.set_header(self.header)
+
+    def remove_cookie(self):
+        """
+        清除header中的Cookie
+        """
+        if 'Authorization' in self.header.keys():
+            self.header.pop('Authorization')
+        self.http_o.set_header(self.header)
+
+    def get(self, url, version=None):
+        if version is not None:
+            url = self.get_url(url, version)
+        else:
+            url = self.get_url(url)
+        res = self.http_o.get(url)
+        return res
+
+    def post(self, url, param=None, version=None):
+        url = self.get_url(url, version)
+        param = json.dumps(param)
+        res = self.http_o.post(url, param)
+        return res
+
+    def put(self, url, params='', version=None):
+        url = self.get_url(url, version)
+        if isinstance(params, str) is False:
+            params = json.dumps(params)
+        res = self.http_o.put(url, params)
+        return res
+
+    def delete(self, url, param="", version=None):
+        url = self.get_url(url, version)
+        if param == "":
+            res = self.http_o.delete(url)
+        else:
+            params = json.dumps(param)
+            res = self.http_o.delete(url, params)
+        return res
+
+
+if __name__ == '__main__':
+    pass

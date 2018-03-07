@@ -1,0 +1,2809 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "API文档描述",
+    "version" : "v1",
+    "title" : "业务课程服务接口文档",
+    "termsOfService" : "http://www.github.com/kongchen/swagger-maven-plugin",
+    "contact" : {
+      "name" : "vime 587803"
+    }
+  },
+  "host" : "business-course-service.debug.web.nd/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/v1/business_course/actions/search" : {
+      "get" : {
+        "summary" : "[5.6.2]查询业务课程",
+        "description" : "",
+        "operationId" : "search",
+        "parameters" : [ {
+          "in" : "gql",
+          "name" : "gql",
+          "description" : "resultClass:\r\n    com.nd.elearning.businesscourse.service.core.repository.course.BusinessCourse\r\nfilterMembers:\r\nmaxResult:\r\n    2147483647\r\nenabledLike:\r\n    true\r\nenabledIn:\r\n    true\r\n",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/BusinessCourse"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BusinessCourseBaseVo"
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "[5.6.2]查询业务课程",
+        "description" : "",
+        "operationId" : "search",
+        "parameters" : [ {
+          "in" : "gql",
+          "name" : "gql",
+          "description" : "resultClass:\r\n    com.nd.elearning.businesscourse.service.core.repository.course.BusinessCourse\r\nfilterMembers:\r\nmaxResult:\r\n    2147483647\r\nenabledLike:\r\n    true\r\nenabledIn:\r\n    true\r\n",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/BusinessCourse"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BusinessCourseBaseVo"
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_course_evaluate/actions/search" : {
+      "get" : {
+        "summary" : "[5.7.1]查询业务课程下的评测",
+        "description" : "",
+        "operationId" : "findActivity",
+        "parameters" : [ {
+          "in" : "gql",
+          "name" : "gql",
+          "description" : "resultClass:\r\n    com.nd.elearning.businesscourse.service.core.repository.evaluate.BusinessCourseEvaluating\r\nfilterMembers:\r\nmaxResult:\r\n    2147483647\r\nenabledLike:\r\n    true\r\nenabledIn:\r\n    true\r\n",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/BusinessCourseEvaluating"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BusinessCourseStudyActivityVo"
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "[5.7.1]查询业务课程下的评测",
+        "description" : "",
+        "operationId" : "findActivity",
+        "parameters" : [ {
+          "in" : "gql",
+          "name" : "gql",
+          "description" : "resultClass:\r\n    com.nd.elearning.businesscourse.service.core.repository.evaluate.BusinessCourseEvaluating\r\nfilterMembers:\r\nmaxResult:\r\n    2147483647\r\nenabledLike:\r\n    true\r\nenabledIn:\r\n    true\r\n",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/BusinessCourseEvaluating"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BusinessCourseStudyActivityVo"
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_course_study_activity/actions/search" : {
+      "get" : {
+        "summary" : "[5.6.2]查询用户课程活动信息列表",
+        "description" : "",
+        "operationId" : "findActivity",
+        "parameters" : [ {
+          "in" : "gql",
+          "name" : "gql",
+          "description" : "resultClass:\r\n    com.nd.elearning.businesscourse.service.core.repository.study.BusinessCourseStudyActivity\r\nfilterMembers:\r\nmaxResult:\r\n    2147483647\r\nenabledLike:\r\n    true\r\nenabledIn:\r\n    true\r\n",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/BusinessCourseStudyActivity"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BusinessCourseStudyActivityVo"
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "[5.6.2]查询用户课程活动信息列表",
+        "description" : "",
+        "operationId" : "findActivity",
+        "parameters" : [ {
+          "in" : "gql",
+          "name" : "gql",
+          "description" : "resultClass:\r\n    com.nd.elearning.businesscourse.service.core.repository.study.BusinessCourseStudyActivity\r\nfilterMembers:\r\nmaxResult:\r\n    2147483647\r\nenabledLike:\r\n    true\r\nenabledIn:\r\n    true\r\n",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/BusinessCourseStudyActivity"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BusinessCourseStudyActivityVo"
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_course_study_progress/actions/search" : {
+      "get" : {
+        "summary" : "[5.6.2]查询用户课程学习进度列表",
+        "description" : "",
+        "operationId" : "findProgress",
+        "parameters" : [ {
+          "in" : "gql",
+          "name" : "gql",
+          "description" : "resultClass:\r\n    com.nd.elearning.businesscourse.service.core.repository.study.BusinessCourseStudyProgress\r\nfilterMembers:\r\nmaxResult:\r\n    2147483647\r\nenabledLike:\r\n    true\r\nenabledIn:\r\n    true\r\n",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/BusinessCourseStudyProgress"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BusinessCourseStudyProgressVo"
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "[5.6.2]查询用户课程学习进度列表",
+        "description" : "",
+        "operationId" : "findProgress",
+        "parameters" : [ {
+          "in" : "gql",
+          "name" : "gql",
+          "description" : "resultClass:\r\n    com.nd.elearning.businesscourse.service.core.repository.study.BusinessCourseStudyProgress\r\nfilterMembers:\r\nmaxResult:\r\n    2147483647\r\nenabledLike:\r\n    true\r\nenabledIn:\r\n    true\r\n",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/BusinessCourseStudyProgress"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BusinessCourseStudyProgressVo"
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_course_user/actions/search" : {
+      "get" : {
+        "summary" : "[5.6.2]查询课程用户",
+        "description" : "",
+        "operationId" : "search",
+        "parameters" : [ {
+          "in" : "gql",
+          "name" : "gql",
+          "description" : "resultClass:\r\n    com.nd.elearning.businesscourse.service.core.repository.access.BusinessCourseUser\r\nfilterMembers:\r\nmaxResult:\r\n    2147483647\r\nenabledLike:\r\n    false\r\nenabledIn:\r\n    true\r\n",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/BusinessCourseUser"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BusinessCourseUserVo"
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "[5.6.2]查询课程用户",
+        "description" : "",
+        "operationId" : "search",
+        "parameters" : [ {
+          "in" : "gql",
+          "name" : "gql",
+          "description" : "resultClass:\r\n    com.nd.elearning.businesscourse.service.core.repository.access.BusinessCourseUser\r\nfilterMembers:\r\nmaxResult:\r\n    2147483647\r\nenabledLike:\r\n    false\r\nenabledIn:\r\n    true\r\n",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/BusinessCourseUser"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BusinessCourseUserVo"
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_courses" : {
+      "post" : {
+        "summary" : "[5.6.2]创建业务课程",
+        "description" : "",
+        "operationId" : "create",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "业务课程",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/BusinessCourseVo"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BusinessCourseVo"
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_courses/biz_data" : {
+      "get" : {
+        "summary" : "[5.6.2]获取biz_data",
+        "description" : "biz_param：\n{\n\t\"course_id\":uuid,\n\t\"resource_id\":uuid,\n\t\"resource_type\":int,\n\t\"location\":int\n}\n\nresource_type，枚举型：0、视频 1、文档\n\nlocation, 定位信息，视频传秒、文档传页码",
+        "operationId" : "getBizData",
+        "parameters" : [ {
+          "name" : "biz_param",
+          "in" : "query",
+          "description" : "biz_param",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BizData"
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_courses/config/actions/search" : {
+      "get" : {
+        "summary" : "[5.6.2]查询业务课程配置",
+        "description" : "",
+        "operationId" : "searchCourseConfig",
+        "parameters" : [ {
+          "in" : "gql",
+          "name" : "gql",
+          "description" : "resultClass:\r\n    com.nd.elearning.businesscourse.service.core.repository.config.BusinessCourseConfig\r\nfilterMembers:\r\nmaxResult:\r\n    2147483647\r\nenabledLike:\r\n    false\r\nenabledIn:\r\n    true\r\n",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/BusinessCourseConfig"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/业务课程配置"
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "[5.6.2]查询业务课程配置",
+        "description" : "",
+        "operationId" : "searchCourseConfig",
+        "parameters" : [ {
+          "in" : "gql",
+          "name" : "gql",
+          "description" : "resultClass:\r\n    com.nd.elearning.businesscourse.service.core.repository.config.BusinessCourseConfig\r\nfilterMembers:\r\nmaxResult:\r\n    2147483647\r\nenabledLike:\r\n    false\r\nenabledIn:\r\n    true\r\n",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/BusinessCourseConfig"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/业务课程配置"
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_courses/extra_info/actions/search" : {
+      "get" : {
+        "summary" : "[5.6.2]查询业务课程扩展信息",
+        "description" : "",
+        "operationId" : "searchExtra",
+        "parameters" : [ {
+          "in" : "gql",
+          "name" : "gql",
+          "description" : "resultClass:\r\n    com.nd.elearning.businesscourse.service.core.repository.course.BusinessCourseExtra\r\nfilterMembers:\r\nmaxResult:\r\n    2147483647\r\nenabledLike:\r\n    false\r\nenabledIn:\r\n    true\r\n",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/BusinessCourseExtra"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/业务课程扩展信息"
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "[5.6.2]查询业务课程扩展信息",
+        "description" : "",
+        "operationId" : "searchExtra",
+        "parameters" : [ {
+          "in" : "gql",
+          "name" : "gql",
+          "description" : "resultClass:\r\n    com.nd.elearning.businesscourse.service.core.repository.course.BusinessCourseExtra\r\nfilterMembers:\r\nmaxResult:\r\n    2147483647\r\nenabledLike:\r\n    false\r\nenabledIn:\r\n    true\r\n",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/BusinessCourseExtra"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/业务课程扩展信息"
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_courses/{business_course_id}" : {
+      "get" : {
+        "summary" : "[5.6.2]获取业务课程",
+        "description" : "",
+        "operationId" : "get",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BusinessCourseVo"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "[5.6.2]修改业务课程",
+        "description" : "",
+        "operationId" : "update",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "业务课程",
+          "required" : true,
+          "schema" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "object"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BusinessCourseVo"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "[5.6.2]删除业务课程",
+        "description" : "",
+        "operationId" : "delete",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    },
+    "/v1/business_courses/{business_course_id}/catalogs" : {
+      "get" : {
+        "summary" : "[5.6.2]查询业务课程目录结构",
+        "description" : "",
+        "operationId" : "getCatalog",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BusinessCourseCatalogVo"
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_courses/{business_course_id}/config" : {
+      "get" : {
+        "summary" : "[5.6.2]获取业务课程配置",
+        "description" : "",
+        "operationId" : "getBusinessCourseConfig",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/业务课程配置"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "[5.6.2]更新业务课程配置",
+        "description" : "",
+        "operationId" : "updateBusinessCourseConfig",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "业务课程配置",
+          "required" : true,
+          "schema" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "object"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/业务课程配置"
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_courses/{business_course_id}/exams" : {
+      "get" : {
+        "summary" : "[5.6.2]获取业务课程下所有考试",
+        "description" : "",
+        "operationId" : "list",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/BusinessCourseExamVo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_courses/{business_course_id}/exams/{exam_id}" : {
+      "get" : {
+        "summary" : "[5.6.2]获取指定的业务课程考试",
+        "description" : "",
+        "operationId" : "get",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "exam_id",
+          "in" : "path",
+          "description" : "考试标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BusinessCourseExamVo"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "[5.6.2]修改业务课程考试",
+        "description" : "",
+        "operationId" : "update",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "exam_id",
+          "in" : "path",
+          "description" : "考试标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "业务课程考试",
+          "required" : true,
+          "schema" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "object"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BusinessCourseExamVo"
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_courses/{business_course_id}/extra_infos" : {
+      "get" : {
+        "summary" : "[5.6.2]获取业务课程扩展信息",
+        "description" : "",
+        "operationId" : "getExtra",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/业务课程扩展信息"
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_courses/{business_course_id}/knowledges" : {
+      "get" : {
+        "summary" : "[5.6.2]获取业务课程知识点列表",
+        "description" : "",
+        "operationId" : "getKnowledges",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/BusinessCourseKnowledgeVo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_courses/{business_course_id}/lesson/progresses" : {
+      "get" : {
+        "summary" : "[5.6.2]获取所有课时学习状态",
+        "description" : "",
+        "operationId" : "getCourseLessonProgresses",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/BusinessCourseLessonProgressVo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_courses/{business_course_id}/lessons/{lesson_id}/progresses" : {
+      "get" : {
+        "summary" : "[5.6.2]获取课时学习状态",
+        "description" : "",
+        "operationId" : "getCourseLessonProgress",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "lesson_id",
+          "in" : "path",
+          "description" : "课时标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BusinessCourseLessonProgressVo"
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_courses/{business_course_id}/lessons/{lesson_id}/resources" : {
+      "get" : {
+        "summary" : "[5.6.2]查询业务课程课时的资源列表",
+        "description" : "",
+        "operationId" : "getResources",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "lesson_id",
+          "in" : "path",
+          "description" : "课时标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "knowledge_id",
+          "in" : "query",
+          "description" : "知识点标识",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/BusinessCourseResourceVo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_courses/{business_course_id}/resource_time" : {
+      "post" : {
+        "summary" : "[5.6.2]获取业务课程在该时长规则下的资源时长",
+        "description" : "",
+        "operationId" : "checkTime",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "课程学时规则-对应资源时长入参",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/课程学时规则-对应资源时长入参"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/课程学时规则-对应资源时长"
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_courses/{business_course_id}/time_rules" : {
+      "get" : {
+        "summary" : "[5.6.2]获取业务课程时长规则",
+        "description" : "",
+        "operationId" : "get",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/课程学时规则"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "[5.6.2]更新业务课程时长规则",
+        "description" : "",
+        "operationId" : "update",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "业务课程时长规则",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "object"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/课程学时规则"
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_courses/{business_course_id}/users" : {
+      "post" : {
+        "summary" : "[5.6.2]新增课程用户",
+        "description" : "",
+        "operationId" : "save",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "用户信息",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer",
+              "format" : "int64"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/BatchResultVoBusinessCourseUserVo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/business_courses/{business_course_id}/users/{user_id}" : {
+      "delete" : {
+        "summary" : "[5.6.2]删除课程用户",
+        "description" : "",
+        "operationId" : "delete",
+        "parameters" : [ {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "user_id",
+          "in" : "path",
+          "description" : "用户标识",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    },
+    "/v1/time_rules" : {
+      "get" : {
+        "summary" : "[5.6.2]获取项目时长规则",
+        "description" : "",
+        "operationId" : "get",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/项目学时规则"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "[5.6.2]更新项目时长规则",
+        "description" : "",
+        "operationId" : "update",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "项目时长规则",
+          "required" : true,
+          "schema" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "object"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/项目学时规则"
+            }
+          }
+        }
+      }
+    },
+    "/v1/users/{user_id}/business_courses/{business_course_id}/actions/manual_progress" : {
+      "put" : {
+        "summary" : "[5.6.2]手动设置学习进度",
+        "description" : "",
+        "operationId" : "manualProgress",
+        "parameters" : [ {
+          "name" : "user_id",
+          "in" : "path",
+          "description" : "用户",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BusinessCourseStudyProgressVo"
+            }
+          }
+        }
+      }
+    },
+    "/v1/users/{user_id}/business_courses/{business_course_id}/last_study_resources" : {
+      "get" : {
+        "summary" : "[5.6.2]查询用户课程上次学习资源",
+        "description" : "",
+        "operationId" : "lastStudyResource",
+        "parameters" : [ {
+          "name" : "user_id",
+          "in" : "path",
+          "description" : "用户列表",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "business_course_id",
+          "in" : "path",
+          "description" : "业务课程标识",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/UserResourceRecordVo"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "BatchResultVoBusinessCourseUserVo" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "结果码：0、成功 1、失败 2、重复报名 3、不在限制白名单中 4、课程未解锁"
+        },
+        "message" : {
+          "type" : "string",
+          "description" : "结果信息"
+        },
+        "data" : {
+          "description" : "查询结果",
+          "$ref" : "#/definitions/BusinessCourseUserVo"
+        }
+      },
+      "description" : "查询结果包装类"
+    },
+    "BizData" : {
+      "type" : "object",
+      "properties" : {
+        "course_name" : {
+          "type" : "string",
+          "description" : "课程名称"
+        },
+        "chapter_name" : {
+          "description" : "章节名称",
+          "$ref" : "#/definitions/ChapterNameVo"
+        },
+        "knowledge_name" : {
+          "type" : "string",
+          "description" : "知识点名称"
+        },
+        "resource_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "资源标识"
+        },
+        "resource_type" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "资源类型"
+        },
+        "location" : {
+          "description" : "定位地址",
+          "$ref" : "#/definitions/LocationVo"
+        },
+        "resource_name" : {
+          "type" : "string",
+          "description" : "资源名称"
+        }
+      }
+    },
+    "BusinessCourse" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "业务课程标识"
+        },
+        "project_id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "项目标识"
+        },
+        "unit_id" : {
+          "type" : "string",
+          "description" : "元课程标识"
+        },
+        "custom_id" : {
+          "type" : "string",
+          "description" : "自定义标识"
+        },
+        "custom_type" : {
+          "type" : "string",
+          "description" : "自定义类型"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "元课程名称"
+        },
+        "front_cover_object_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "封面云存储对象Id"
+        },
+        "summary" : {
+          "type" : "string",
+          "description" : "简介"
+        },
+        "user_suit" : {
+          "type" : "string",
+          "description" : "适用人群"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "状态(0:下线,1:在线)"
+        },
+        "type" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "类型(0:默认课程，用于汇总进度,1:普通课程)"
+        },
+        "create_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "创建时间"
+        },
+        "create_user" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "创建人"
+        },
+        "update_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "修改时间"
+        },
+        "update_user" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "修改人"
+        },
+        "status_update_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "状态修改时间"
+        },
+        "share_link" : {
+          "type" : "string",
+          "description" : "分享地址"
+        },
+        "context_id" : {
+          "type" : "string",
+          "description" : "上下文标识，如xxx:11"
+        },
+        "action_rule_link" : {
+          "type" : "string",
+          "description" : "准入链接"
+        }
+      },
+      "description" : "业务课程"
+    },
+    "BusinessCourseBaseVo" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "标识"
+        },
+        "project_id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "项目标识"
+        },
+        "custom_id" : {
+          "type" : "string",
+          "description" : "自定义标识"
+        },
+        "custom_type" : {
+          "type" : "string",
+          "description" : "自定义类型"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "课程名称"
+        },
+        "unit_id" : {
+          "type" : "string",
+          "description" : "元课程标识"
+        },
+        "front_cover_object_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "封面云存储对象Id"
+        },
+        "front_cover_url" : {
+          "type" : "string",
+          "description" : "使用云存储的封面图片url"
+        },
+        "summary" : {
+          "type" : "string",
+          "description" : "摘要"
+        },
+        "introduction" : {
+          "type" : "string",
+          "description" : "介绍（支持富文本）"
+        },
+        "user_suit" : {
+          "type" : "string",
+          "description" : "适用人群"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "状态"
+        },
+        "create_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "创建时间"
+        },
+        "create_user" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "创建人"
+        },
+        "update_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "修改时间"
+        },
+        "update_user" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "修改人"
+        },
+        "context_id" : {
+          "type" : "string",
+          "description" : "上下文标识，如xxx:11"
+        }
+      },
+      "description" : "业务课程基本信息"
+    },
+    "BusinessCourseCatalogVo" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "目录标识"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "目录名称"
+        },
+        "parent_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "父节点标识"
+        },
+        "sort_num" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "排序号"
+        },
+        "ref_chapter_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "引用的章节标识"
+        },
+        "source" : {
+          "type" : "string",
+          "description" : "引用的章节来源"
+        },
+        "lessons" : {
+          "type" : "array",
+          "description" : "课时列表",
+          "items" : {
+            "$ref" : "#/definitions/BusinessCourseLessonVo"
+          }
+        },
+        "children" : {
+          "type" : "array",
+          "description" : "子节点列表",
+          "items" : {
+            "$ref" : "#/definitions/BusinessCourseCatalogVo"
+          }
+        }
+      },
+      "description" : "业务课程目录"
+    },
+    "BusinessCourseConfig" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "业务课程标识"
+        },
+        "drawable" : {
+          "type" : "boolean",
+          "description" : "是否允许拖动",
+          "default" : false
+        },
+        "page_require_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "文档平均每页时长"
+        },
+        "skippable" : {
+          "type" : "boolean",
+          "description" : "是否允许跳转",
+          "default" : false
+        },
+        "sequential" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "0-无需顺序学习 1-资源按顺序学习 2-章按顺序学习"
+        },
+        "unlock_type" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "解锁类型 0:无需解锁 1:兑换券或者解锁课程完成 2:兑换券且解锁课程完成 3:只使用兑换券"
+        },
+        "period_display_type" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "学时展示方式 0:学时 1:进度百分比 2:内容数量"
+        },
+        "study_time_limit_type" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "学习有效时间限制类型：1、不限制 2、时间段限制 3、天数限制)"
+        },
+        "study_start_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "学习有效开始时间"
+        },
+        "study_end_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "学习有效结束时间"
+        },
+        "study_days" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "学习有效天数"
+        },
+        "create_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "创建时间"
+        },
+        "create_user" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "创建人"
+        },
+        "update_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "修改时间"
+        },
+        "update_user" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "修改人"
+        },
+        "resource_downloadable" : {
+          "type" : "boolean",
+          "description" : "允许下载",
+          "default" : false
+        }
+      },
+      "description" : "业务课程配置"
+    },
+    "BusinessCourseEvaluating" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "business_course_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "业务课程标识"
+        },
+        "maker_course_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "组课课程标识（组课工具）"
+        },
+        "lesson_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "课时标识（组课工具）"
+        },
+        "knowledge_id" : {
+          "type" : "string",
+          "description" : "知识点标识（组课工具）"
+        },
+        "evaluating_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "评测标识（组课工具-评测）"
+        },
+        "exam_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "测评标识（测评服务）"
+        },
+        "status" : {
+          "type" : "boolean",
+          "description" : "上下线",
+          "default" : false
+        }
+      },
+      "description" : "业务课程评测"
+    },
+    "BusinessCourseExamVo" : {
+      "type" : "object",
+      "required" : [ "business_course_id", "exam_id", "progress_percent_condition" ],
+      "properties" : {
+        "business_course_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "业务课程标识,不允许被修改"
+        },
+        "exam_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "考试标识,不允许被修改"
+        },
+        "progress_percent_condition" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "课程考试开考进度百分比限制：0~100, 0为不限制",
+          "minimum" : 0.0,
+          "maximum" : 100.0
+        }
+      },
+      "description" : "业务课程考试"
+    },
+    "BusinessCourseExtra" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "业务课程标识"
+        },
+        "project_id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "项目标识"
+        },
+        "custom_id" : {
+          "type" : "string",
+          "description" : "自定义标识"
+        },
+        "custom_type" : {
+          "type" : "string",
+          "description" : "自定义类型"
+        },
+        "available_access_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "有效报名人数"
+        },
+        "video_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "视频个数"
+        },
+        "video_duration" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "视频时长"
+        },
+        "document_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "文档个数"
+        },
+        "document_page_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "文档页数"
+        },
+        "exercise_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "习题个数"
+        },
+        "exercise_question_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "习题题目个数"
+        },
+        "url_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "url个数"
+        },
+        "vr_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "vr人生资源个数"
+        },
+        "panorama_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "全景资源个数"
+        },
+        "live_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "直播个数"
+        },
+        "live_duration" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "直播时长"
+        },
+        "resource_total_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "资源总个数"
+        },
+        "effective_resource_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "有效资源(计入时长)个数"
+        },
+        "total_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "总时长"
+        },
+        "total_period" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "总学时"
+        },
+        "total_score" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "总分"
+        },
+        "total_star" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "总星级"
+        },
+        "experience_type" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "体验类型"
+        }
+      },
+      "description" : "业务课程扩展信息"
+    },
+    "BusinessCourseKnowledgeVo" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "标识"
+        },
+        "knowledge_id" : {
+          "type" : "string",
+          "description" : "引用知识点标识"
+        },
+        "parent_knowledge_id" : {
+          "type" : "string",
+          "description" : "引用知识点父节点标识"
+        },
+        "title" : {
+          "type" : "string",
+          "description" : "知识点名称"
+        },
+        "lesson_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "课时标识"
+        },
+        "order_number" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "排序号"
+        }
+      },
+      "description" : "知识点"
+    },
+    "BusinessCourseLessonProgressVo" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "课时标识"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "课时学习状态 0-未开始 1-进行中 2-已完成"
+        }
+      },
+      "description" : "业务课程课时学习状态"
+    },
+    "BusinessCourseLessonVo" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "课时标识"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "课时名称"
+        },
+        "sort_num" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "排序号"
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "课时简介"
+        },
+        "knowledges" : {
+          "type" : "array",
+          "description" : "课时知识点",
+          "items" : {
+            "$ref" : "#/definitions/BusinessCourseKnowledgeVo"
+          }
+        }
+      },
+      "description" : "业务课程课时"
+    },
+    "BusinessCourseResourceVo" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "资源标识"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "资源名称"
+        },
+        "type" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "资源类型 0-视频 1-文档 10-评测"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "资源学习状态 0-未学习 1-学习中 2-已学习"
+        },
+        "resource_data" : {
+          "example" : "http://api.e.huayu.nd/eLearning-resource-gateway.html#/definitions/视频信息",
+          "description" : "资源信息,见资源网关定义",
+          "$ref" : "#/definitions/Resource"
+        },
+        "extra_data" : {
+          "type" : "object",
+          "description" : "扩展信息",
+          "additionalProperties" : {
+            "type" : "object"
+          }
+        }
+      },
+      "description" : "业务课程资源"
+    },
+    "BusinessCourseStudyActivity" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "标识"
+        },
+        "business_course_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "业务课程标识"
+        },
+        "project_id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "项目标识"
+        },
+        "custom_id" : {
+          "type" : "string",
+          "description" : "自定义标识"
+        },
+        "custom_type" : {
+          "type" : "string",
+          "description" : "自定义类型"
+        },
+        "user_id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "用户标识"
+        },
+        "target_type" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "活动类型"
+        },
+        "target_id" : {
+          "type" : "string",
+          "description" : "活动对象"
+        },
+        "current_session_id" : {
+          "type" : "string",
+          "description" : "当前持有会话"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "状态"
+        },
+        "effective_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "活动有效时长"
+        },
+        "real_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "活动真实时长"
+        },
+        "period_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "可转换为学时的时长"
+        },
+        "total_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "活动总时长"
+        },
+        "score" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "资源得分"
+        },
+        "star" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "资源星级"
+        },
+        "start_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "活动开始时间"
+        },
+        "last_active_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "最后活跃时间"
+        },
+        "context_id" : {
+          "type" : "string",
+          "description" : "上下文标识"
+        }
+      },
+      "description" : "业务课程学习活动"
+    },
+    "BusinessCourseStudyActivityVo" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "标识"
+        },
+        "business_course_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "业务课程标识"
+        },
+        "user_id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "用户标识"
+        },
+        "target_type" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "活动对象类型"
+        },
+        "target_id" : {
+          "type" : "string",
+          "description" : "活动对象标识"
+        },
+        "current_session_id" : {
+          "type" : "string",
+          "description" : "当前持有会话"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "活动状态"
+        },
+        "effective_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "有效学习时长"
+        },
+        "total_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "总时长"
+        },
+        "score" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "资源得分"
+        },
+        "star" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "资源星级"
+        },
+        "start_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "活动开始时间"
+        },
+        "last_active_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "最后活跃时间"
+        },
+        "context_id" : {
+          "type" : "string",
+          "description" : "上下文标识"
+        }
+      },
+      "description" : "用于课程学习活动"
+    },
+    "BusinessCourseStudyProgress" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "business_course_id" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "project_id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "custom_id" : {
+          "type" : "string"
+        },
+        "custom_type" : {
+          "type" : "string"
+        },
+        "user_id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "effective_time" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "total_time" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "effective_period" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "total_period" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "finish_resource_count" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "effective_resource_count" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "resource_total_count" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "effective_star" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "total_star" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "effective_score" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "total_score" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "avg_score" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "manual_progress" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "need_update" : {
+          "type" : "boolean",
+          "default" : false
+        },
+        "create_time" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "update_time" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "finish_time" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "pass_status" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "evaluate_time" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "passed" : {
+          "type" : "boolean",
+          "default" : false
+        }
+      }
+    },
+    "BusinessCourseStudyProgressVo" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "标识"
+        },
+        "business_course_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "业务课程标识"
+        },
+        "project_id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "项目标识"
+        },
+        "custom_id" : {
+          "type" : "string",
+          "description" : "自定义标识"
+        },
+        "custom_type" : {
+          "type" : "string",
+          "description" : "自定义类型"
+        },
+        "user_id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "用户标识"
+        },
+        "effective_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "有效学习时长（单位：秒）"
+        },
+        "total_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "总时长（单位：秒）"
+        },
+        "effective_period_raw" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "有效学时（单位：秒）"
+        },
+        "total_period_raw" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "总学时（单位：秒）"
+        },
+        "effective_period" : {
+          "type" : "number",
+          "format" : "double",
+          "description" : "有效学时"
+        },
+        "total_period" : {
+          "type" : "number",
+          "format" : "double",
+          "description" : "总学时"
+        },
+        "progress_percent" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "进度百分比，整数值"
+        },
+        "period_unit" : {
+          "type" : "string",
+          "description" : "学时单位"
+        },
+        "finish_resource_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "完成资源数"
+        },
+        "effective_resource_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "有效课程资源数"
+        },
+        "resource_total_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "课程资源总数"
+        },
+        "effective_star" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "获得星级个数"
+        },
+        "total_star" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "课程星级总数"
+        },
+        "effective_score" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "课程资源总得分"
+        },
+        "total_score" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "课程资源总分"
+        },
+        "avg_score" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "平均分"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "学习进度状态 0、未开始，1、学习中，2、已完成"
+        },
+        "need_update" : {
+          "type" : "boolean",
+          "description" : "是否需要更新",
+          "default" : false
+        },
+        "create_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "创建时间"
+        },
+        "update_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "更新时间"
+        },
+        "finish_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "完成时间"
+        },
+        "pass_status" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "课程合格状态 -1、不合格 0、待评定 1、合格"
+        },
+        "evaluate_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "课程合格状态的评定时间"
+        }
+      },
+      "description" : "课程学习进度"
+    },
+    "BusinessCourseUser" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "业务课程准入标识"
+        },
+        "business_course_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "业务课程标识"
+        },
+        "user_id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "用户标识"
+        },
+        "access_status" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "准入状态"
+        },
+        "create_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "创建时间"
+        },
+        "update_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "更新时间"
+        }
+      },
+      "description" : "业务课程准入"
+    },
+    "BusinessCourseUserVo" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "标识"
+        },
+        "business_course_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "业务课程标识"
+        },
+        "user_id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "用户标识"
+        },
+        "create_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "创建时间"
+        },
+        "update_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "更新时间"
+        }
+      },
+      "description" : "业务课程学员"
+    },
+    "BusinessCourseVo" : {
+      "type" : "object",
+      "required" : [ "name" ],
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "标识(创建、修改时，无需传值)"
+        },
+        "maker_course_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "组课课程id(创建、修改时，无需传值)"
+        },
+        "project_id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "项目标识(创建、修改时，无需传值)"
+        },
+        "custom_id" : {
+          "type" : "string",
+          "description" : "自定义标识(不允许修改)，长度50"
+        },
+        "custom_type" : {
+          "type" : "string",
+          "description" : "自定义类型(不允许修改)，长度20"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "课程名称，长度50，非空"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "状态: 0下线 1上线 默认为0"
+        },
+        "summary" : {
+          "type" : "string",
+          "description" : "摘要，长度100"
+        },
+        "introduction" : {
+          "type" : "string",
+          "description" : "介绍（支持富文本）"
+        },
+        "user_suit" : {
+          "type" : "string",
+          "description" : "课程适合人群，长度100"
+        },
+        "front_cover_object_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "封面"
+        },
+        "front_cover_url" : {
+          "type" : "string",
+          "description" : "使用云存储的封面图片url(创建、修改时，无需传值)"
+        },
+        "create_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "创建时间(创建、修改时，无需传值)"
+        },
+        "create_user" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "创建人(创建、修改时，无需传值)"
+        },
+        "update_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "修改时间(创建、修改时，无需传值)"
+        },
+        "update_user" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "修改人(创建、修改时，无需传值)"
+        },
+        "context_id" : {
+          "type" : "string",
+          "description" : "上下文标识，如xxx:11，长度255"
+        },
+        "action_rule_link" : {
+          "type" : "string",
+          "description" : "准入链接，长度200"
+        }
+      },
+      "description" : "业务课程"
+    },
+    "ChapterNameVo" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string",
+          "description" : "名称"
+        },
+        "child" : {
+          "description" : "子章节",
+          "$ref" : "#/definitions/ChapterNameVo"
+        }
+      }
+    },
+    "LocationVo" : {
+      "type" : "object",
+      "properties" : {
+        "location" : {
+          "type" : "string",
+          "description" : "定位"
+        },
+        "web_link" : {
+          "type" : "string",
+          "description" : "WEB Link"
+        },
+        "cmp_link" : {
+          "type" : "string",
+          "description" : "CMP Link"
+        }
+      }
+    },
+    "Resource" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid"
+        }
+      }
+    },
+    "UserResourceRecordVo" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "资源标识"
+        },
+        "lesson_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "课时标识"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "资源名称"
+        },
+        "type" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "资源类型 0-视频 1-文档"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "资源学习状态 0-未学习 1-学习中 2-已学习"
+        }
+      },
+      "description" : "业务课程资源"
+    },
+    "业务课程扩展信息" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "标识"
+        },
+        "available_access_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "有效报名人数"
+        },
+        "video_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "视频个数"
+        },
+        "video_duration" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "视频时长"
+        },
+        "document_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "文档个数"
+        },
+        "document_page_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "文档页数"
+        },
+        "exercise_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "习题个数"
+        },
+        "exercise_question_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "习题题目个数"
+        },
+        "url_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "url个数"
+        },
+        "vr_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "vr人生资源个数"
+        },
+        "panorama_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "全景资源个数"
+        },
+        "live_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "直播个数"
+        },
+        "live_duration" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "直播时长"
+        },
+        "resource_total_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "资源总数"
+        },
+        "effective_resource_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "有效资源（计算时长）总数"
+        },
+        "total_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "总时长"
+        },
+        "total_period_raw" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "总学时(原始值，用于二次计算)"
+        },
+        "total_period" : {
+          "type" : "number",
+          "format" : "double",
+          "description" : "总学时"
+        },
+        "period_unit" : {
+          "type" : "string",
+          "description" : "学时单位"
+        },
+        "total_score" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "总分"
+        },
+        "total_star" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "总星级"
+        },
+        "experience_type" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "体验类型"
+        }
+      }
+    },
+    "业务课程配置" : {
+      "type" : "object",
+      "properties" : {
+        "business_course_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "业务课程标识，更新操作时无需传"
+        },
+        "drawable" : {
+          "type" : "boolean",
+          "description" : "视频是否允许拖拽，默认为true",
+          "default" : false
+        },
+        "skippable" : {
+          "type" : "boolean",
+          "description" : "文档是否允许跳转，默认为true",
+          "default" : false
+        },
+        "page_require_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "文档每页要求时间，0为不限制，默认为0"
+        },
+        "sequential" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "0-无需顺序学习 1-资源按顺序学习 2-章按顺序学习"
+        },
+        "unlock_type" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "解锁类型 0:无需解锁 1:兑换券或者解锁课程完成 2:兑换券且解锁课程完成 3:只使用兑换券"
+        },
+        "period_display_type" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "学时展示方式 0:学时 1:进度百分比 2:内容数量"
+        },
+        "study_time_limit_type" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "学习有效时间限制类型：1、不限制 2、时间段限制 3、天数限制)"
+        },
+        "study_start_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "学习有效开始时间"
+        },
+        "study_end_time" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "学习有效结束时间"
+        },
+        "study_days" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "学习有效天数"
+        },
+        "resource_downloadable" : {
+          "type" : "boolean",
+          "description" : "允许下载",
+          "default" : false
+        }
+      }
+    },
+    "课程学时规则" : {
+      "type" : "object",
+      "properties" : {
+        "business_course_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "业务课程标识,由url的参数获取"
+        },
+        "effect_config" : {
+          "description" : "业务课程已生效学时配置",
+          "$ref" : "#/definitions/课程学时设置"
+        },
+        "update_config" : {
+          "description" : "业务课程待更新学时配置",
+          "$ref" : "#/definitions/课程学时设置"
+        }
+      }
+    },
+    "课程学时规则-对应资源时长" : {
+      "type" : "object",
+      "properties" : {
+        "video_total_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "视频总时长（秒）"
+        },
+        "video_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "视频数（个）"
+        },
+        "document_total_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "文档总时长（秒）"
+        },
+        "document_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "文档数（页）"
+        },
+        "exercise_total_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "练习总时长（秒）"
+        },
+        "exercise_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "习题数（道）"
+        },
+        "vr_total_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "vr总时长（秒）"
+        },
+        "vr_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "vr数（个）"
+        },
+        "live_total_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "直播总时长（秒）"
+        },
+        "live_count" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "直播数（个）"
+        },
+        "course_total_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "课程总时长（秒）"
+        },
+        "total_period" : {
+          "type" : "number",
+          "format" : "double",
+          "description" : "总学时"
+        }
+      }
+    },
+    "课程学时规则-对应资源时长入参" : {
+      "type" : "object",
+      "required" : [ "document_unit", "exercise_unit", "vr_unit" ],
+      "properties" : {
+        "document_unit" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "文档时长(每页/秒,范围1~99999)"
+        },
+        "exercise_unit" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "练习时长(每题/秒,范围1~99999)"
+        },
+        "vr_unit" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "vr时长(每个/秒,范围1~99999)"
+        },
+        "video_effect_max" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "一个视频可获得的时长上限，0为不限制，-1为不获得"
+        },
+        "document_effect_max" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "一个文档可获得的时长上限，0为不限制，-1为不获得"
+        },
+        "exercise_effect_max" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "一份习题可获得的时长上限，0为不限制，-1为不获得"
+        },
+        "vr_effect_max" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "一个vr可获得的时长上限，0为不限制，-1为不获得"
+        },
+        "live_effect_max" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "一个直播可获得的时长上限，0为不限制，-1为不获得时长"
+        }
+      }
+    },
+    "课程学时设置" : {
+      "type" : "object",
+      "required" : [ "document_unit", "exercise_unit", "include_exam_time", "vr_unit" ],
+      "properties" : {
+        "project_id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "项目标识,由header的参数获取"
+        },
+        "time_conversion_ratio" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "学时资源转换比(1学时=xx,单位秒,范围1~99999)"
+        },
+        "time_unit" : {
+          "type" : "string",
+          "description" : "学时单位名称"
+        },
+        "document_unit" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "文档时长(每页/秒,范围1~99999)"
+        },
+        "exercise_unit" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "练习时长(每题/秒,范围1~99999)"
+        },
+        "vr_unit" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "VR时长(每个/秒,范围1~99999)"
+        },
+        "include_exam_time" : {
+          "type" : "boolean",
+          "description" : "考试算入资源时长",
+          "default" : false
+        },
+        "exam_unit" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "考试时长,考试算入资源时长时生效，配置0代表考试实际配置时长，单位秒，范围0~99999"
+        },
+        "business_course_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "description" : "业务课程标识,由url的参数获取"
+        },
+        "enable_custom" : {
+          "type" : "boolean",
+          "description" : "启用自定义资源时长配置，为false时，使用项目的资源学时配置",
+          "default" : false
+        },
+        "adjusted_time" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "课程人为调整时长，单位秒，0为不调整，范围0~999999"
+        },
+        "video_effect_max" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "一个视频可获得的时长上限，0为不限制，-1为不获得时长"
+        },
+        "document_effect_max" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "一个文档可获得的时长上限，0为不限制，-1为不获得时长"
+        },
+        "exercise_effect_max" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "一份习题可获得的时长上限，0为不限制，-1为不获得时长"
+        },
+        "vr_effect_max" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "一个VR可获得的时长上限，0为不限制，-1为不获得时长"
+        },
+        "live_effect_max" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "一个直播可获得的时长上限，0为不限制，-1为不获得时长"
+        }
+      }
+    },
+    "项目学时规则" : {
+      "type" : "object",
+      "properties" : {
+        "project_id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "项目标识,由header的参数获取"
+        },
+        "effect_config" : {
+          "description" : "项目已生效学时配置",
+          "$ref" : "#/definitions/项目学时设置"
+        },
+        "update_config" : {
+          "description" : "项目待更新学时配置",
+          "$ref" : "#/definitions/项目学时设置"
+        }
+      }
+    },
+    "项目学时设置" : {
+      "type" : "object",
+      "required" : [ "document_unit", "exercise_unit", "include_exam_time", "vr_unit" ],
+      "properties" : {
+        "project_id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "项目标识,由header的参数获取"
+        },
+        "time_conversion_ratio" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "学时资源转换比(1学时=xx,单位秒,范围1~99999)"
+        },
+        "time_unit" : {
+          "type" : "string",
+          "description" : "学时单位名称"
+        },
+        "document_unit" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "文档时长(每页/秒,范围1~99999)"
+        },
+        "exercise_unit" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "练习时长(每题/秒,范围1~99999)"
+        },
+        "vr_unit" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "VR时长(每个/秒,范围1~99999)"
+        },
+        "include_exam_time" : {
+          "type" : "boolean",
+          "description" : "考试算入资源时长",
+          "default" : false
+        },
+        "exam_unit" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "考试时长,考试算入资源时长时生效，配置0代表考试实际配置时长，单位秒，范围0~99999"
+        }
+      }
+    }
+  }
+}
