@@ -4,6 +4,8 @@
     <file url="file://$PROJECT_DIR$/acrelation/urls.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/learn/cof" charset="GBK" />
     <file url="file://$PROJECT_DIR$/learn/service" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/learn/static/js/dataTables.bootstrap.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/learn/static/js/jquery.dataTables.js" charset="GBK" />
     <file url="file://$PROJECT_DIR$/learn/templates/base.html" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
