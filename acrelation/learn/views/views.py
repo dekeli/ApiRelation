@@ -1,11 +1,9 @@
 # coding:utf-8
-from django.http import HttpResponse
 from django.shortcuts import render
-from ..models import ApiMessage
 from django.core.paginator import Paginator
-from django.core import serializers
-from django.core.exceptions import ValidationError
-import json
+
+from learn.model.models import ApiMessage
+
 
 # Create your views here.
 def api_message(request):

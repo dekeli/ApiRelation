@@ -25,5 +25,6 @@ urlpatterns = [
     path('show_api_list/', learn_views.api_message, name='show_api_list'),
     path('add_api/', learn_add_update_api_views.add_api_to_library, name='add_api'),
     path('update_api/', learn_add_update_api_views.update_api_to_library, name='update_api'),
+    path('show_relation_list/', ),
     path('admin/', admin.site.urls),
 ]

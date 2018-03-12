@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3779909891">
+  <component name="DataSourceManagerImpl" format="xml" hash="3350046836">
     <data-source source="LOCAL" name="MySQL - apicrbase@localhost" uuid="04d5f31b-c28e-4c13-ab33-4fbe5dd6fc2f">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>

@@ -2,15 +2,8 @@
 from __future__ import unicode_literals
 from django.utils.encoding import python_2_unicode_compatible
 from django.db import models
-from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
-@python_2_unicode_compatible
-class Person(models.Model):
-    name = models.CharField(max_length=30)
-    age = models.IntegerField()
-
-
 @python_2_unicode_compatible
 class ApiMessage(models.Model):
     name = models.CharField('接口名称', max_length=250, null=True, blank=True)

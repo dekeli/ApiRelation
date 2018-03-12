@@ -112,20 +112,44 @@
       <primary-key name="PRIMARY" columns="session_key"/>
       <index name="django_session_expire_date_a5c62663" unique="false" columns="expire_date"/>
     </table>
+    <table name="learn_apichangelog" schema="" catalog="apicrbase" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="api_change" sqlType="VARCHAR" precision="500" scale="0" nullable="false" jdbcType="12"/>
+      <column name="api_send_status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="change_time" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="api_message_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="learn_apichangelog_api_message_id_c65bac1b_fk_learn_api" columns="api_message_id" ref-table="learn_apimessage" ref-schema="" ref-catalog="apicrbase" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="learn_apichangelog_api_message_id_c65bac1b_fk_learn_api" unique="false" columns="api_message_id"/>
+    </table>
     <table name="learn_apimessage" schema="" catalog="apicrbase" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="250" scale="0" nullable="true" jdbcType="12"/>
       <column name="url_name" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
       <column name="request_name" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
       <column name="component_owner" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
       <column name="api_status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="learn_apichangelog_api_message_id_c65bac1b_fk_learn_api" table="learn_apichangelog" schema="" catalog="apicrbase" columns="api_message_id"/>
+      <exported-key name="learn_apirelationmix_apimessage_id_c653f2f4_fk_learn_api" table="learn_apirelationmix_api_message" schema="" catalog="apicrbase" columns="apimessage_id"/>
     </table>
-    <table name="learn_person" schema="" catalog="apicrbase" type="TABLE">
+    <table name="learn_apirelationmix" schema="" catalog="apicrbase" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="name" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
-      <column name="age" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="re_component_name" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
+      <column name="re_component_director" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="use_message" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="learn_apirelationmix_apirelationmix_id_c306979c_fk_learn_api" table="learn_apirelationmix_api_message" schema="" catalog="apicrbase" columns="apirelationmix_id"/>
+    </table>
+    <table name="learn_apirelationmix_api_message" schema="" catalog="apicrbase" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="apirelationmix_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="apimessage_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="learn_apirelationmix_apimessage_id_c653f2f4_fk_learn_api" columns="apimessage_id" ref-table="learn_apimessage" ref-schema="" ref-catalog="apicrbase" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="learn_apirelationmix_apirelationmix_id_c306979c_fk_learn_api" columns="apirelationmix_id" ref-table="learn_apirelationmix" ref-schema="" ref-catalog="apicrbase" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="learn_apirelationmix_api_apirelationmix_id_apimes_62c854aa_uniq" unique="true" columns="apirelationmix_id,apimessage_id"/>
+      <index name="learn_apirelationmix_apimessage_id_c653f2f4_fk_learn_api" unique="false" columns="apimessage_id"/>
     </table>
   </data-source>
 </component>

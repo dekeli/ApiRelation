@@ -1,9 +1,11 @@
 # coding:utf-8
-from django.http import HttpResponse
-from django.shortcuts import render
-from ..models import ApiMessage
-from django.core.paginator import Paginator
 import json
+
+from django.http import HttpResponse
+
+from learn.model.models import ApiMessage
+from django.db.models import Q
+
 
 # Create your views here.
 
@@ -23,8 +25,13 @@ def add_api_to_library(request):
                                            url_name=url_name,
                                            name=name,
                                            api_status=api_status)
-            ApiMessage_object.save()
-            data['result'] = 'success'
+            ApiMessage_object_get = ApiMessage.objects.filter(component_owner=component_owner,
+                                                              request_name=request_name, url_name=url_name)
+            if ApiMessage_object_get:
+                data["result"] = "repeat"
+            else:
+                ApiMessage_object.save()
+                data['result'] = 'success'
         except Exception as e:
             data["message"] = str(e)
             data["result"] = "fail"
@@ -45,12 +52,16 @@ def update_api_to_library(request):
         name = request.POST.get("edit_api_name")
         api_status = request.POST.get("edit_api_status")
         try:
-            ApiMessage.objects.filter(id=api_id).update(component_owner=component_owner,
-                                                        request_name=request_name,
-                                                        url_name=url_name,
-                                                        name=name,
-                                                        api_status=api_status)
-            data['result'] = 'success'
+            ApiMessage_object_get = ApiMessage.objects.filter(Q(component_owner=component_owner) & Q(request_name=request_name) & Q(url_name=url_name) & ~Q(id=api_id))
+            if ApiMessage_object_get:
+                data['result'] = 'repeat'
+            else:
+                ApiMessage.objects.filter(id=api_id).update(component_owner=component_owner,
+                                                            request_name=request_name,
+                                                            url_name=url_name,
+                                                            name=name,
+                                                            api_status=api_status)
+                data['result'] = 'success'
         except Exception as e:
             data["message"] = str(e)
             data["result"] = "fail"
