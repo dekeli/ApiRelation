@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="panel panel-primary" id="api-change">
+        <div class="panel-heading">
+            <h3 class="panel-title">变更报表</h3>
+        </div>
+        <div style="display: inline">
+            <form method="get">
+                {% csrf_token %}
+                <span style="float: left;width:5%;margin-top: 20px;margin-left: 10px">接口服务:</span>
+                <input name="component_owner" type="text" id="search-change-component" style="float: left;width:10%;margin-top: 15px" class="form-control" placeholder="请输入组件服务名"/>
+                <span style="float: left;width:5%;margin-top: 20px;margin-left: 15px">请求方式:</span>
+                <input name="request_name" type="text" id="search-change-request" style="float: left;width:6%;margin-top: 15px" class="form-control" placeholder="请求方式"/>
+                <span style="float: left;width:3%;margin-top: 20px;margin-left: 15px">URL:</span>
+                <input name="url_name" type="text" id="search-change-url" style="float: left;width:20%;margin-top: 15px" class="form-control" placeholder="请输入URL"/>
+                <span style="float: left;width:3%;margin-top: 20px;margin-left: 10px">时间:</span>
+                <input class="form-control" type="text" id="datetimepicker_start" style="float: left;background-color:#ffffff;width:18%;margin-top: 15px" onclick="" onchange="">
+                <label class="control-label" style="float: left;margin-top: 15px">~</label>
+                <input class="form-control" type="text" id="datetimepicker_end" style="float: left;background-color:#ffffff;width:18%;margin-top: 15px" onclick="" onchange="">
+                <button type="submit" class="btn btn-primary" style="float: left;margin-left: 15px;margin-top: 15px;margin-bottom: 20px">查询</button>
+            </form>
+        <div class="panel-body" id="change_table_div">
+            <table class="table" id="table-change-list">
+                <thead>
+                    <tr>
+                        <th style="width: 5%">ID</th>
+                        <th style="width: 25%">所属组件服务</th>
+                        <th style="width: 20%">请求方式</th>
+                        <th style="width: 15%">URL</th>
+                        <th style="width: 15%">生成时间</th>
+                        <th style="width: 20%">是否已下发通知</th>
+                    </tr>
+                </thead>
+                <tbody id="table_body_re">
+                    <tr>
+                        <td style="  width: 5%" >123</td>
+                        <td style="  width: 25%" >123</td>
+                        <td style="  width: 20%" >123</td>
+                        <td style="  width: 15%" >123</td>
+                        <td style="  width: 15%" >2018-10-23</td>
+                        <td style="width: 20%">已下发</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static "apijs/api_library.js" %}"></script>
+{% endblock %}

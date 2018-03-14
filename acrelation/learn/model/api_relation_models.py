@@ -7,7 +7,7 @@ from .models import ApiMessage
 # Create your models here.
 @python_2_unicode_compatible
 class ApiRelationMix(models.Model):
-    re_component_name = models.CharField('调用接口的组件名称', max_length=250)  # 关联接口库
+    re_component_name = models.CharField('调用接口的组件名称', max_length=250)
     re_component_director = models.IntegerField('负责人联系方式')
     api_message = models.ManyToManyField(ApiMessage)  # 关联接口库表
     use_message = models.CharField('调用说明', max_length=500, null=True, blank=True)
