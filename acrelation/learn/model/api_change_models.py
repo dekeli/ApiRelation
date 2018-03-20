@@ -13,7 +13,7 @@ class ApiChangeLog(models.Model):
     change_time = models.DateTimeField('接口变更时间')
 
     def __str__(self):
-        return u'%s %s %s %s %s' % (self.api_message, self.api_change, self.api_send_status, self.change_time)
+        return u'%s %s %s %s' % (self.api_message, self.api_change, self.api_send_status, self.change_time)
 
 
 

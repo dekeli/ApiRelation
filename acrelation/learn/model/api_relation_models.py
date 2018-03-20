@@ -13,8 +13,8 @@ class ApiRelationMix(models.Model):
     use_message = models.CharField('调用说明', max_length=500, null=True, blank=True)
 
     def __str__(self):
-        return u'%s %s %s %s %s' % (self.re_component_name, self.re_component_director, self.api_message,
-                                    self.api_change_history)
+        return u'%s %s %s %s' % (self.re_component_name, self.re_component_director, self.api_message,
+                                 self.api_change_history)
 
 
 
