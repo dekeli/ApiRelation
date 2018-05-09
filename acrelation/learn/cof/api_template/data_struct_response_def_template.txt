@@ -1,0 +1,10 @@
+class %(response_class_name)s(object):
+    """
+    %(class_desc)s
+    """
+
+    def __init__(self, data):
+        """
+        %(struct_desc)s
+        """
+        unity.assert_test(data%(struct_parameter)s)

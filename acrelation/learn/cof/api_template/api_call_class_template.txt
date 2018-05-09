@@ -1,0 +1,19 @@
+# -*- coding: UTF-8 -*-
+# !/usr/bin/env python
+# -------------------------------------------------------------------------------
+# Name:         %(top_notes_name)s
+# Purpose:      %(top_notes_purpose)s
+#
+# Author:       %(top_notes_author)s
+#
+# Created:      %(top_notes_created)s
+# Copyright:    %(top_notes_copyright)s
+# Licence:     <your licence>
+# -------------------------------------------------------------------------------
+
+from api_call.%(api_call_service_type)s.%(api_call_http_model_name)s import ApiHttp
+
+
+class %(api_call_class_name)s(ApiHttp):
+    def __init__(self, env):
+        super(%(api_call_class_name)s, self).__init__(env=env)

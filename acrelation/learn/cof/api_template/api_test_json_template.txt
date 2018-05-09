@@ -1,0 +1,19 @@
+{
+  "wrong_question_gateway_api": {
+    "title": "eLearning wrong question gateway API ",
+    "report_file": "wrong_question_gateway_api",
+    "cases": {
+      "testcases": [
+        "gateway_test"
+      ]
+    },
+    "receivers": [
+      283764
+    ],
+    "group": [
+    ],
+    "contact": {
+      "林志宏": "13720824854"
+    }
+  }
+}

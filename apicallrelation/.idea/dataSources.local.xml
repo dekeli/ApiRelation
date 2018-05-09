@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - apicrbase@localhost" uuid="b2bd6fe5-9c67-450b-8cb7-3de5155c0544">
+      <secret-storage>master_key</secret-storage>
+      <user-name>apirelationbase</user-name>
+      <schema-pattern>apicrbase.*</schema-pattern>
+      <default-schemas>apicrbase.*</default-schemas>
+    </data-source>
+  </component>
+</project>

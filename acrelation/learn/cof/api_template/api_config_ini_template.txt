@@ -1,0 +1,37 @@
+[dev]
+host = %(dev_host)s
+port = %(dev_port)s
+token = %(dev_token)s
+version = %(version)s
+Authorization = %(authorization)s
+X-Gaea-Authorization = %(x_gaea_authorization)s
+
+
+
+[test]
+host = %(test_host)s
+port = %(test_port)s
+token = %(test_token)s
+version =  %(test_version)s
+Authorization =  %(test_authorization)s
+X-Gaea-Authorization =  %(test_x_gaea_authorization)s
+
+
+
+[pre]
+host = %(pre_host)s
+port = %(pre_port)s
+token = %(pre_token)s
+version =  %(pre_version)s
+Authorization =  %(pre_authorization)s
+X-Gaea-Authorization =  %(pre_x_gaea_authorization)s
+
+
+[ol]
+host = %(ol_host)s
+port = %(ol_port)s
+token = %(ol_token)s
+version =  %(ol_version)s
+Authorization =  %(ol_authorization)s
+X-Gaea-Authorization =  %(ol_x_gaea_authorization)s
+
