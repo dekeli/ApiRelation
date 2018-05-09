@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'acrelation.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'apicrbase',
-        'USER': 'lwz',
-        'PASSWORD': '123456',
+        'NAME': 'apicr',
+        'USER': 'root',
+        'PASSWORD': '12345678',
         'HOST': 'localhost',
         'PORT': '3306',
     }

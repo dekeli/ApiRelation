@@ -3,7 +3,7 @@ import json
 
 from django.http import HttpResponse
 
-from learn.model.models import ApiMessage
+from ..model.models import ApiMessage
 from django.db.models import Q
 
 

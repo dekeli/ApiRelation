@@ -2,7 +2,7 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
 
-from learn.model.models import ApiMessage
+from ..model.models import ApiMessage
 
 
 # Create your views here.
@@ -15,6 +15,7 @@ def api_message(request):
     apidata["apis"] = apis
     apidata["pages"] = pages
     return render(request, 'api_message.html', apidata)
+
 
 def get_kwarg(data={}):
     kwargs = {}
