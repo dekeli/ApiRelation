@@ -6,6 +6,9 @@ from ..model.models import ApiMessage
 
 
 # Create your views here.
+def top_page(request):
+    return render(request, 'base.html')
+
 def api_message(request):
     apidata = {}
     apis = ApiMessage.objects.all()

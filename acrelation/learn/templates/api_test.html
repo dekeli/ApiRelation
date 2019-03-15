@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="panel panel-primary" id="api-library">
+        <div class="panel-heading">
+            <h3 class="panel-title">接口测试</h3>
+        </div>
+        <div style="display: inline">
+            <button type="button" class="btn btn-primary" style="float: left;margin-left: 15px;margin-top: 30px;margin-bottom: 20px" data-toggle="modal" href="#add-api-window">新增</button>
+            <form method="get" action="{% url 'search_api_list' %}">
+                {% csrf_token %}
+                <span style="float: left;width:6%;margin-top: 20px;margin-left: 50px">接口服务:</span>
+                <input name="component_owner" type="text" id="search-api-component" style="float: left;width:20%;margin-top: 15px" class="form-control" placeholder="请输入组件服务名"/>
+                <span style="float: left;width:6%;margin-top: 20px;margin-left: 15px">请求方式:</span>
+                <input name="request_name" type="text" id="search-api-request" style="float: left;width:10%;margin-top: 15px" class="form-control" placeholder="请输入请求方式"/>
+                <span style="float: left;width:4%;margin-top: 20px;margin-left: 15px">URL:</span>
+                <input name="url_name" type="text" id="search-api-url" style="float: left;width:30%;margin-top: 15px" class="form-control" placeholder="请输入URL"/>
+                <button type="submit" class="btn btn-primary" style="float: left;margin-left: 15px;margin-top: 15px">查询</button>
+            </form>
+        </div>
+        <div class="panel-body" id="api_table_div">
+            <table class="table" id="table-api-list">
+                <thead>
+                    <tr>
+                        <th style="width: 5%">ID</th>
+                        <th style="width: 15%">所属组件服务</th>
+                        <th style="width: 7%">请求方式</th>
+                        <th style="width: 30%">URL信息</th>
+                        <th style="width: 15%">接口名称</th>
+                        <th style="width: 8%">是否在用</th>
+                        <th style="width: 20%">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="table_body">
+                    {% for api in apis %}
+                    <tr>
+                        <td style="width: 5%" >{{ api.id }}</td>
+                        <td style="width: 15%" title="{{ api.component_owner }}">{{ api.component_owner|safe|truncatechars:40 }}</td>
+                        <td style="width: 7%" title="{{ api.request_name }}">{{ api.request_name }}</td>
+                        <td style="width: 30%" title="{{ api.url_name }}">{{ api.url_name|safe|truncatechars:60 }}</td>
+                        <td style="width: 15%" title="{{ api.name }}">{{ api.name|safe|truncatechars:40 }}</td>
+                        {% if  api.api_status == 1 %}
+                        <td style="width: 8%">在用</td>
+                        {% else %}
+                        <td style="width: 8%">禁用</td>
+                        {% endif %}
+                        <td style="width: 20%">
+                            <a class="btn btn-primary" data-toggle="modal" href="#update-api-window" onclick="update_api_message(this)">修改</a>
+                            <a class="btn btn-primary" data-toggle="modal">变更通知</a>
+                            <a class="btn btn-primary" data-toggle="modal">引用查询</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="col-xs-6" style="width:25%;margin-top: 30px;">
+                <span>
+                    共 {{ pages.count }} 条记录 当前第 {{ apis.number }} 页 共 {{ pages.num_pages }} 页
+                </span>
+            </div >
+            <ul class="pagination" style="float: right">
+                <li>
+                    <a href="?page=
+                    {% if apis.has_previous %}
+                        {{ apis.previous_page_number }}
+                    {% else %}
+                        {{ apis.number }}
+                    {% endif %}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+                </li>
+                {% for page in pages.page_range %}
+                <li><a href="?page={{ page }}">{{ page }}</a></li>
+                {% endfor %}
+                <li>
+                    <a href="?page=
+                    {% if apis.has_next %}
+                        {{ apis.next_page_number }}
+                    {% else %}
+                        {{ apis.number }}
+                    {% endif %}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="bg"></div>
+    <div class="modal fade" id="add-api-window" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 id="add_modal_title" class="modal-title">
+                        <strong>新增接口基本信息</strong>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <br/>
+                    <label style="float:left;width:20%">接口服务：<span style="color:red">*</span></label>
+                    <input type="text" id="api_component_input" style="width:70%" class="form-control" placeholder="请输入接口所属服务名" maxlength="100" />
+                    <br/>
+                    <label style="float:left;width:20%">请求方法：<span style="color:red">*</span></label>
+                    <select class="form-control" id="api_request_select" style="width: 70%">
+                        <option value="GET" selected>GET</option>
+                        <option value="POST">POST</option>
+                        <option value="PUT">PUT</option>
+                        <option value="DELETE">DELETE</option>
+                        <option value="PATCH">PATCH</option>
+                        <option value="OPTION">OPTION</option>
+                    </select>
+                    <br/>
+                    <label style="float:left;width:20%">URL信息：<span style="color:red">*</span></label>
+                    <input type="text" id="api_url_input" style="width:70%" class="form-control" placeholder="请输入URL信息" maxlength="100" />
+                    <br/>
+                    <label style="float:left;width:20%">接口名称：</label>
+                    <input type="text" id="api_name_input" style="width:70%" class="form-control" placeholder="请输入接口名称" maxlength="100" />
+                    <br/>
+                    <label style="float:left;width:20%">是否在用：<span style="color:red">*</span></label>
+                    <select class="form-control" id="api_status_select" style="width: 70%" onchange="">
+                        <option value="1" selected>在用</option>
+                        <option value="0">禁用</option>
+                    </select>
+                    <br/>
+                </div>
+                <div id="add_modal_footer" class="modal-footer">
+                    <span style="color:red;float: left">注：接口服务或URL不可为中文</span>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <button type="button" class="btn btn-primary" onclick="add_api_message()">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="update-api-window" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 id="edit_add_modal_title" class="modal-title" id="myModalLabel">
+                        <strong>修改接口基本信息</strong>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <br/>
+                    <label style="float:left;width:20%">接口服务：<span style="color:red">*</span></label>
+                    <input type="text" id="edit_api_component_input" style="width:70%" class="form-control" placeholder="请输入接口所属服务名" maxlength="100" />
+                    <br/>
+                    <label style="float:left;width:20%">请求方法：<span style="color:red">*</span></label>
+                    <select class="form-control" id="edit_api_request_select" style="width: 70%">
+                        <option value="GET" selected>GET</option>
+                        <option value="POST">POST</option>
+                        <option value="PUT">PUT</option>
+                        <option value="DELETE">DELETE</option>
+                        <option value="PATCH">PATCH</option>
+                        <option value="OPTION">OPTION</option>
+                    </select>
+                    <br/>
+                    <label style="float:left;width:20%">URL信息：<span style="color:red">*</span></label>
+                    <input type="text" id="edit_api_url_input" style="width:70%" class="form-control" placeholder="请输入URL信息" maxlength="100" />
+                    <br/>
+                    <label style="float:left;width:20%">接口名称：</label>
+                    <input type="text" id="edit_api_name_input" style="width:70%" class="form-control" placeholder="请输入接口名称" maxlength="100" />
+                    <br/>
+                    <label style="float:left;width:20%">是否在用：<span style="color:red">*</span></label>
+                    <select class="form-control" id="edit_api_status_select" style="width: 70%">
+                        <option value="1" selected>在用</option>
+                        <option value="0">禁用</option>
+                    </select>
+                    <br/>
+                </div>
+                <div id="edit_add_modal_footer" class="modal-footer">
+                    <span style="color:red;float: left">注：接口服务或URL不可为中文</span>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <button type="button" class="btn btn-primary" id="update_api_message_button">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static "apijs/api_library.js" %}"></script>
+{% endblock %}
